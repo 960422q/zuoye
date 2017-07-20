@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>	
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.content{
+			width: 250px;
+			height: 300px;
+			margin: 0 auto;
+			padding: 20px;
+			background: #999;
+		}
+		h3{
+			height: 30px;
+		}
+		.title{
+			display: flex;
+			justify-content: space-between;
+			margin-top: 10px;
+			font-size: 12px;
+		}
+		.main{
+			margin-top: 3px;
+			z-index: 999;	
+		}
+		.sou{
+			display: flex;
+		}
+		#text{
+			width: 200px;
+			height: 30px;
+			
+		}
+		#btn{
+			display: block;
+			width: 50px;
+			height: 32px;
+			line-height: 32px;
+			text-align: center;
+			background: white;
+			margin-top: 1px;
+		}
+		
+		#box{
+			display: none;
+			z-index: 999;	
+			position:absolute ;	
+		}
+		#box div{
+			width: 250px;
+			height: 40px;
+			line-height: 40px;
+			background: white;
+			
+		}
+		.m{
+			margin-top: 3px;
+			z-index: 1;
+		}
+		.s{
+			display: flex;
+		}
+		#t{
+			width: 200px;
+			height: 30px;
+			
+		}
+		#b{
+			display: block;
+			width: 50px;
+			height: 32px;
+			line-height: 32px;
+			text-align: center;
+			background: white;
+			margin-top: 1px;
+		}
+		#bo{
+			display: none;
+			position:absolute ;	
+		}
+		#bo div{
+			width: 250px;
+			height: 40px;
+			line-height: 40px;
+			background: white;
+		}
+		.btn{
+			width: 250px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background:#0094EF;
+			margin-top: 20px;
+			color: white;
+		}
+		img{
+			transform: rotateX(180deg);
+		}
+		</style>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script>		
+           $(function(){
+		      $("#btn").click(function() {
+		      $("#box").css("display", "block");
+		      $("#box div").click(function() {
+			  $("#text").val($(this).html());
+			  $("#box").css("display", "none");
+		        })
+		     })	
+		      $("#b").click(function() {
+		      $("#bo").css("display", "block");
+		      $("#bo div").click(function() {
+			  $("#t").val($(this).html());
+			  $("#bo").css("display", "none");
+		    })
+		  })	
+	 })
+
+		</script>
+	</head>
+	<body>
+		<div class="content">
+			<h3>快速搜索消费贷款</h3>
+			<div class="title">
+				<p>贷款金额</p>
+				<p>不足一万可用小数表示</p>
+			</div>
+			<div class="main">
+				<div class="sou">
+				<input type="text" id="text" value="30万元"/><span id="btn"><img src="image/btn.png" class="img1"/></span>
+				</div>
+				<div id="box">
+					<div>30万元</div>
+					<div>40万元</div>
+					<div>50万元</div>
+				</div>
+			</div>
+			<div class="title">
+				<p>贷款期限</p>
+				<p></p>
+			</div>
+			<div class="m">
+				<div class="s">
+				<input type="text" id="t" value="1个月"/><span id="b"><img src="image/btn.png" class="img2"/></span>
+				</div>
+				<div id="bo">
+					<div>6个月</div>
+					<div>一年</div>
+					<div>18个月</div>
+				</div>
+			</div>
+			<div class="btn">搜索一下</div>
+		</div>
+	</body>
+</html>
